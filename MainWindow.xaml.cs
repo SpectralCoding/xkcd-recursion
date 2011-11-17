@@ -17,8 +17,18 @@ namespace XKCDRecursion {
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window {
+		private Renderer Renderer;
+		private Calculator Calculator;
+
 		public MainWindow() {
 			InitializeComponent();
+			Renderer = new Renderer();
+			Calculator = new Calculator();
+		}
+
+		private void GenInitialImgBtn_Click(object sender, RoutedEventArgs e) {
+			Renderer.CreateInitial();
+			FinishedImg.Source = Renderer.CurrentBmpSrc;
 		}
 	}
 }
